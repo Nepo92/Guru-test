@@ -219,8 +219,17 @@
 
   .left {
     top: 0;
+    z-index: 1;
+    box-shadow: 0 5px 5px rgba(black, 0.5);
+    height: 100vh;
+
     &__item {
       margin-top: 15px;
+
+      &:first-child {
+        margin-top: 15px;
+      }
+
       &:nth-child(2) {
         margin-top: 40px;
       }
@@ -294,7 +303,6 @@
   .left {
     z-index: 1;
     height: 100vh;
-    box-shadow: 0 5px 5px rgba(black, 0.5);
 
     &__item {
       margin-top: 40px;

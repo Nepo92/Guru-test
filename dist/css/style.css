@@ -443,8 +443,15 @@ h2 {
   }
   .left {
     top: 0;
+    z-index: 1;
+    -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+    height: 100vh;
   }
   .left__item {
+    margin-top: 15px;
+  }
+  .left__item:first-child {
     margin-top: 15px;
   }
   .left__item:nth-child(2) {
@@ -507,8 +514,6 @@ h2 {
   .left {
     z-index: 1;
     height: 100vh;
-    -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
-            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
   }
   .left__item {
     margin-top: 40px;
