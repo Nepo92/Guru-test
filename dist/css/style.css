@@ -277,7 +277,7 @@ h2 {
 .nav {
   position: fixed;
   top: 0;
-  z-index: 2;
+  z-index: 3;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -286,8 +286,6 @@ h2 {
       -ms-flex-direction: column;
           flex-direction: column;
   width: calc(100% - 70px);
-  max-height: 266px;
-  overflow: scroll;
   background-color: white;
   -webkit-box-shadow: 5px 10px 25px rgba(7, 2, 14, 0.1);
           box-shadow: 5px 10px 25px rgba(7, 2, 14, 0.1);
@@ -304,11 +302,18 @@ h2 {
 
 .nav__list {
   position: relative;
-  z-index: 7;
+  z-index: 4;
   width: 100%;
+  height: 266px;
   margin: 0;
   padding: 15px 0 15px 15px;
+  overflow-y: scroll;
   list-style: none;
+  scrollbar-width: 0;
+}
+
+.nav__list::-webkit-scrollbar {
+  width: 0;
 }
 
 .nav__item {
@@ -327,10 +332,6 @@ h2 {
   color: black;
   font-weight: 600;
   font-size: 36px;
-}
-
-.nav__item:last-child {
-  margin-bottom: 20px;
 }
 
 .nav__link {
@@ -376,7 +377,7 @@ h2 {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 5;
+  z-index: 2;
   width: calc(100% + 70px);
   height: 100vh;
   -webkit-transform: translateX(-70px);
@@ -461,6 +462,12 @@ h2 {
 
 .left__icon.active {
   fill: #29006c;
+}
+
+@media (min-width: 321px) {
+  .nav__list {
+    height: auto;
+  }
 }
 
 @media (min-width: 768px) {
@@ -1315,6 +1322,14 @@ hr {
 }
 
 @supports (-webkit-appearance:none){
+
+}
+
+ @media (min-width: 321px){
+
+@supports (-webkit-appearance:none){
+
+}
 
 }
 

@@ -50,7 +50,7 @@ leftIcon.forEach((item) => {
 const menuCheckbox = document.querySelector('.menu__checkbox');
 const navLayer = document.querySelector('.nav__layer');
 
-menuCheckbox.addEventListener('change', (e) => {
+menuCheckbox.addEventListener('change', () => {
   if (menuCheckbox.checked === true) {
     navLayer.onclick = () => {
       menuCheckbox.checked = false;
