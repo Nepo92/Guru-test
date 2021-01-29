@@ -279,10 +279,48 @@
 
       &:first-child {
         margin-top: 0px !important;
+
+        img {
+          width: 48px;
+          height: 48px;
+        }
       }
 
       &:nth-child(2) {
-        margin-top: 55px;
+        margin-top: 63px !important;
+      }
+
+      &:nth-child(3) {
+        margin-top: 36px !important;
+
+        .content__icon {
+          width: 42px !important;
+          height: 42px !important;
+        }
+      }
+
+      &:nth-child(4) {
+        margin-top: 37px !important;
+      }
+
+      &:nth-child(5) {
+        margin-top: 32px !important;
+      }
+
+      &:nth-child(6) {
+        margin-top: 32px !important;
+      }
+
+      &:nth-child(7) {
+        margin-top: 32px !important;
+      }
+
+      &:nth-child(8) {
+        margin-top: 32px !important;
+      }
+
+      &:nth-child(9) {
+        margin-top: 32px !important;
       }
 
       &:nth-last-child(2) {
@@ -293,6 +331,10 @@
         margin-top: 40px;
         margin-bottom: 40px;
       }
+    }
+
+    &__avatar {
+      margin-top: 14px;
     }
   }
 }
