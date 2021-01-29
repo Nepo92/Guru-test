@@ -46,3 +46,20 @@ leftIcon.forEach((item) => {
     item.classList.add('active');
   });
 });
+
+const menuCheckbox = document.querySelector('.menu__checkbox');
+const navLayer = document.querySelector('.nav__layer');
+
+menuCheckbox.addEventListener('change', (e) => {
+  if (menuCheckbox.checked === true) {
+    navLayer.onclick = () => {
+      menuCheckbox.checked = false;
+    };
+  }
+});
+
+document.body.addEventListener('click', (event) => {
+  if (event.target.classList.contains('nav__link')) {
+    menuCheckbox.checked = false;
+  }
+});

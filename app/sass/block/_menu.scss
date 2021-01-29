@@ -30,7 +30,7 @@
     }
 
     &:not(checked) ~ .nav {
-      top: -100%;
+      top: -1000%;
     }
   }
 }
@@ -38,6 +38,7 @@
 .burger {
   position: absolute;
   left: 50%;
+  z-index: 7;
   display: inline-flex;
   align-items: center;
   width: 30px;
@@ -80,7 +81,7 @@
 .nav {
   position: fixed;
   top: 0;
-  z-index: 0;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   width: calc(100% - 70px);
@@ -91,6 +92,8 @@
   transition-property: top;
 
   &__list {
+    position: relative;
+    z-index: 7;
     width: 100%;
     margin: 0;
     padding: 15px 0 15px 15px;
@@ -141,11 +144,22 @@
       }
     }
   }
+
+  &__layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: calc(100% + 70px);
+    height: 100vh;
+    transform: translateX(-70px);
+  }
 }
 
 .left {
-  position: relative;
+  position: absolute;
   top: 70px;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -220,8 +234,8 @@
   .left {
     top: 0;
     z-index: 1;
-    box-shadow: 0 5px 5px rgba(black, 0.5);
     height: 100vh;
+    box-shadow: 0 5px 5px rgba(black, 0.5);
 
     &__item {
       margin-top: 15px;

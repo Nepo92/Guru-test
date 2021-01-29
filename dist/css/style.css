@@ -216,12 +216,13 @@ h2 {
 }
 
 .menu__checkbox:not(checked) ~ .nav {
-  top: -100%;
+  top: -1000%;
 }
 
 .burger {
   position: absolute;
   left: 50%;
+  z-index: 7;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -276,7 +277,7 @@ h2 {
 .nav {
   position: fixed;
   top: 0;
-  z-index: 0;
+  z-index: 2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -300,6 +301,8 @@ h2 {
 }
 
 .nav__list {
+  position: relative;
+  z-index: 7;
   width: 100%;
   margin: 0;
   padding: 15px 0 15px 15px;
@@ -359,9 +362,22 @@ h2 {
   height: 4px;
 }
 
+.nav__layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: calc(100% + 70px);
+  height: 100vh;
+  -webkit-transform: translateX(-70px);
+      -ms-transform: translateX(-70px);
+          transform: translateX(-70px);
+}
+
 .left {
-  position: relative;
+  position: absolute;
   top: 70px;
+  z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -444,9 +460,9 @@ h2 {
   .left {
     top: 0;
     z-index: 1;
+    height: 100vh;
     -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
             box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
-    height: 100vh;
   }
   .left__item {
     margin-top: 15px;
@@ -633,7 +649,7 @@ h2 {
 }
 
 .clients__list {
-  margin: 15px 0;
+  margin: 15px 0 0;
   padding: 0;
   list-style: none;
 }
