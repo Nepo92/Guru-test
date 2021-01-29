@@ -8,10 +8,16 @@ add.addEventListener('click', () => {
 
 const close = document.querySelector('.popup__close');
 
-close.addEventListener('click', () => {
+function closePopup() {
   popup.style.opacity = '0';
   popup.style.pointerEvents = 'none';
-});
+}
+
+close.addEventListener('click', closePopup);
+
+const cancel = document.querySelector('.popup__cancel');
+
+cancel.addEventListener('click', closePopup);
 
 const menuLink = document.querySelectorAll('.nav__link');
 

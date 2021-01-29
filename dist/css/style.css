@@ -1193,6 +1193,7 @@ h2 {
 
 .popup p:nth-child(11) {
   margin-top: 20px;
+  margin-bottom: 15px;
 }
 
 .popup input {
@@ -1243,6 +1244,12 @@ h2 {
   cursor: pointer;
 }
 
+hr {
+  width: calc(100% - 50px);
+  margin-top: 20px;
+  border: 1ps solid #f1f1f3;
+}
+
 @media (min-width: 500px) {
   .popup {
     -webkit-box-pack: end;
@@ -1266,12 +1273,6 @@ h2 {
   .popup__cancel {
     margin-top: 0;
   }
-}
-
-hr {
-  width: calc(100% - 50px);
-  margin-top: 20px;
-  border: 1ps solid #f1f1f3;
 }
 
 .container {
