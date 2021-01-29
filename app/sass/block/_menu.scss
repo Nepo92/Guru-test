@@ -102,9 +102,12 @@
     margin-top: 15px;
 
     &:first-child {
-      color: black;
-      font-weight: 600;
-      font-size: 36px;
+      h1 {
+        margin: 0;
+        color: black;
+        font-weight: 600;
+        font-size: 36px;
+      }
     }
   }
 
@@ -115,6 +118,7 @@
     font-weight: 500;
     font-size: 18px;
     text-decoration: none;
+    transition: all 0.2s linear;
 
     &::before {
       position: absolute;
@@ -123,6 +127,7 @@
       width: 0;
       height: 0;
       background-color: $menu_active;
+      transition: width 0.2s linear;
       content: "";
     }
 
@@ -198,6 +203,7 @@
     display: inline-block;
     width: 20px;
     height: 30px;
+    transition: all 0.2s linear;
     fill: $color;
 
     &.active {
@@ -269,9 +275,18 @@
 @media (min-width: 1305px) {
   .left {
     &__item {
-      margin-top: 40px;
+      margin-top: 40px !important;
+
+      &:first-child {
+        margin-top: 0px !important;
+      }
+
       &:nth-child(2) {
         margin-top: 55px;
+      }
+
+      &:nth-last-child(2) {
+        margin-top: auto !important;
       }
 
       &:last-child {

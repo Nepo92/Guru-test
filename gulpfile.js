@@ -149,4 +149,4 @@ gulp.task('phpMailer', createPhpMailer);
 
 gulp.task('watch', spy);
 
-gulp.task('default', gulp.parallel('server', 'watch', 'html', 'fonts', 'sass', 'img'));
+gulp.task('default', gulp.parallel('server', 'watch', 'html', 'fonts', 'sass', 'js', 'img'));
