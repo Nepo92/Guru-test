@@ -139,6 +139,12 @@
   }
 }
 
+hr {
+  width: calc(100% - 50px);
+  margin-top: 20px;
+  border: 1ps solid #f1f1f3;
+}
+
 @media (min-width: 500px) {
   .popup {
     justify-content: flex-end;
@@ -158,10 +164,4 @@
       margin-top: 0;
     }
   }
-}
-
-hr {
-  width: calc(100% - 50px);
-  margin-top: 20px;
-  border: 1ps solid #f1f1f3;
 }
