@@ -1,0 +1,283 @@
+.menu {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 70px;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-shadow: 5px 0px 25px rgba(7, 2, 14, 0.05);
+
+  &__checkbox {
+    display: none;
+
+    &:checked ~ .nav {
+      top: 0;
+    }
+
+    &:checked ~ .burger .burger__row {
+      transform: rotate(45deg);
+    }
+
+    &:checked ~ .burger .burger__row::after {
+      margin-top: 0;
+      transform: rotate(90deg);
+    }
+
+    &:checked ~ .burger .burger__row::before {
+      margin-top: 0;
+      transform: rotate(90deg);
+    }
+
+    &:not(checked) ~ .nav {
+      top: -100%;
+    }
+  }
+}
+
+.burger {
+  position: absolute;
+  left: 50%;
+  display: inline-flex;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  margin: 20px auto;
+  transform: translateX(-50%);
+  cursor: pointer;
+
+  &__row {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: $color;
+    transition: all 0.2s linear;
+
+    &::before {
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 3px;
+      margin-top: -8px;
+      background-color: $color;
+      transition: all 0.2s linear;
+      content: "";
+    }
+
+    &::after {
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 3px;
+      margin-top: 8px;
+      background-color: $color;
+      transition: all 0.2s linear;
+      content: "";
+    }
+  }
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 70px);
+  background-color: white;
+  box-shadow: 5px 10px 25px rgba(7, 2, 14, 0.1);
+  transform: translateX(70px);
+  transition-duration: 0.2s;
+  transition-property: top;
+
+  &__list {
+    width: 100%;
+    margin: 0;
+    padding: 15px 0 15px 15px;
+    list-style: none;
+  }
+
+  &__item {
+    display: flex;
+    margin-top: 15px;
+
+    &:first-child {
+      color: black;
+      font-weight: 600;
+      font-size: 36px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    color: inherit;
+    font-weight: 500;
+    font-size: 18px;
+    text-decoration: none;
+
+    &::before {
+      position: absolute;
+      top: 21px;
+      display: flex;
+      width: 0;
+      height: 0;
+      background-color: $menu_active;
+      content: "";
+    }
+
+    &.active {
+      margin-top: 0;
+      color: $menu_active;
+
+      &::before {
+        width: 100%;
+        height: 4px;
+      }
+    }
+  }
+}
+
+.left {
+  position: relative;
+  top: 70px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100vh - 70px);
+  margin: 0;
+  padding: 0;
+  overflow: scroll;
+  list-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+
+  &__avatar {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    cursor: pointer;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:nth-child(6) {
+      stroke: $color;
+
+      .left__icon {
+        &.active {
+          stroke: $menu_active;
+        }
+      }
+    }
+
+    &:nth-child(10) {
+      margin-top: auto;
+    }
+
+    &:last-child {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__icon {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 30px;
+    fill: $color;
+
+    &.active {
+      fill: $menu_active;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .burger {
+    display: none;
+  }
+
+  .left {
+    top: 0px;
+    z-index: 10;
+    height: 100vh;
+    box-shadow: 5px 5px 10px rgba(gray, 0.5);
+
+    &__avatar {
+      margin-top: 15px;
+    }
+  }
+
+  .menu {
+    position: relative;
+
+    &__checkbox {
+      &:not(checked) ~ .nav {
+        top: 0;
+      }
+    }
+  }
+
+  .nav {
+    position: absolute;
+    z-index: 1;
+    width: calc(100vw - 70px);
+    background-color: white;
+
+    &__list {
+      position: absolute;
+      display: flex;
+      flex-wrap: wrap;
+      width: calc(100vw - 70px);
+      height: 130px;
+      padding: 38px 38px 10px;
+      background-color: white;
+    }
+
+    &__item {
+      margin-top: 0;
+      margin-right: 22px;
+
+      &:first-child {
+        width: 100%;
+        font-weight: 600;
+        font-size: 36px;
+        line-height: 41px;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@media (min-width: 1305px) {
+  .left {
+    &__item {
+      margin-top: 40px;
+      &:nth-child(2) {
+        margin-top: 55px;
+      }
+
+      &:last-child {
+        margin-top: 40px;
+        margin-bottom: 40px;
+      }
+    }
+  }
+}

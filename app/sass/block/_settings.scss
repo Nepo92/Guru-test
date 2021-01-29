@@ -1,0 +1,22 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: $color;
+  font-weight: 400;
+  font-family: "TT Commons";
+  cursor: default;
+}
+
+svg {
+  display: inline-flex;
+}
+
+picture {
+  display: contents;
+}

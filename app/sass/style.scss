@@ -1,0 +1,11 @@
+@import "./block/_variables";
+@import "./block/_fonts";
+@import "./block/_settings";
+@import "./block/menu";
+@import "./block/clients";
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}

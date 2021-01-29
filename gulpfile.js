@@ -8,7 +8,7 @@ const concat = require('gulp-concat');
 const webp = require('gulp-webp');
 const webpHTML = require('gulp-webp-html');
 const webpCSS = require('gulp-webp-css');
-const imagemin = require('gulp-imagemin');
+// const imagemin = require('gulp-imagemin');
 const compress = require('gulp-uglify-es').default;
 
 function cleanApp() {
@@ -60,17 +60,17 @@ function createCss() {
 
 function createImg() {
   return gulp.src(['app/img/**/*.+(svg||webp||png||jpg||jpeg||gif)'])
-    .pipe(imagemin([
-      imagemin.gifsicle({ interlaced: true }),
-      imagemin.mozjpeg({ quality: 75, progressive: true }),
-      imagemin.optipng({ optimizationLevel: 10 }),
-      imagemin.svgo({
-        plugins: [
-          { removeViewBox: true },
-          { cleanupIDs: false },
-        ],
-      }),
-    ]))
+    // .pipe(imagemin([
+    //   imagemin.gifsicle({ interlaced: true }),
+    //   imagemin.mozjpeg({ quality: 75, progressive: true }),
+    //   imagemin.optipng({ optimizationLevel: 10 }),
+    //   imagemin.svgo({
+    //     plugins: [
+    //       { removeViewBox: true },
+    //       { cleanupIDs: false },
+    //     ],
+    //   }),
+    // ]))
     .pipe(gulp.dest('dist/img'))
     .pipe(webp())
     .pipe(gulp.dest('dist/img'))
@@ -115,7 +115,7 @@ function createPhpMailer() {
 
 function spy() {
   gulp.watch(['app/**/*.html', '!app/**/_*.html'], gulp.parallel('html'));
-  gulp.watch(['app/sass/**/*.+(scss||sass)', '!app/sass/**/_*.+(sass||scss)'], gulp.parallel('sass'));
+  gulp.watch(['app/sass/**/*.+(scss||sass)'], gulp.parallel('sass'));
   gulp.watch('app/img/**/*.+(svg||webp||png||jpg||jpeg||gif)', gulp.parallel('img'));
   gulp.watch(['app/js/**/*.js', '!app/js/_*.js'], gulp.parallel('js'));
   gulp.watch('app/**/*.php', gulp.parallel('php'));
@@ -149,4 +149,4 @@ gulp.task('phpMailer', createPhpMailer);
 
 gulp.task('watch', spy);
 
-gulp.task('default', gulp.parallel('server', 'watch', 'html', 'fonts', 'sass', 'img', 'spriteSVG', 'js'));
+gulp.task('default', gulp.parallel('server', 'watch', 'html', 'fonts', 'sass', 'img'));
