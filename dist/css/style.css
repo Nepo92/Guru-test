@@ -491,6 +491,11 @@ h2 {
 }
 
 @media (min-width: 1305px) {
+  .nav__link {
+    -webkit-transform: translateY(-5px);
+        -ms-transform: translateY(-5px);
+            transform: translateY(-5px);
+  }
   .left__item {
     margin-top: 40px !important;
   }

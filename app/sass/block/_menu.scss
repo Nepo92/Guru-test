@@ -273,6 +273,12 @@
 }
 
 @media (min-width: 1305px) {
+  .nav {
+    &__link {
+      transform: translateY(-5px);
+    }
+  }
+
   .left {
     &__item {
       margin-top: 40px !important;
