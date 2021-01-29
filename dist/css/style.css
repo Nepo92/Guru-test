@@ -286,6 +286,8 @@ h2 {
       -ms-flex-direction: column;
           flex-direction: column;
   width: calc(100% - 70px);
+  max-height: 266px;
+  overflow: scroll;
   background-color: white;
   -webkit-box-shadow: 5px 10px 25px rgba(7, 2, 14, 0.1);
           box-shadow: 5px 10px 25px rgba(7, 2, 14, 0.1);
@@ -316,11 +318,19 @@ h2 {
   margin-top: 15px;
 }
 
+.nav__item:first-child {
+  margin-top: 0;
+}
+
 .nav__item:first-child h1 {
   margin: 0;
   color: black;
   font-weight: 600;
   font-size: 36px;
+}
+
+.nav__item:last-child {
+  margin-bottom: 20px;
 }
 
 .nav__link {
@@ -630,7 +640,7 @@ h2 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 180px;
+  width: 140px;
   height: 40px;
   color: white;
   font-size: 14px;

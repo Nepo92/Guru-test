@@ -58,8 +58,6 @@ menuCheckbox.addEventListener('change', (e) => {
   }
 });
 
-// const nav = document.querySelector('nav');
-
 document.body.addEventListener('click', (event) => {
   if (event.target.classList.contains('nav__link')) {
     menuCheckbox.checked = false;
